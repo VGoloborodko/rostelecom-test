@@ -1,0 +1,619 @@
+@import url(//db.onlinewebfonts.com/c/82fe5070fde20170ec8414053d0f340d?family=Rostelecom+Basis);
+
+@import "_clear-styles";
+@import "_container-box";
+@import "_media-queries";
+
+//________________Компоненты
+
+//Кнопка
+.button {
+  padding: 14px 28px;
+  border-radius: 4px;
+  background: #ff4f12;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  color: #ffffff;
+
+  @include nsm {
+    padding: 14px 23px;
+  }
+}
+
+//Преимущество
+.advantage {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  width: 100%;
+  max-width: 345px;
+
+  @include nmd {
+    flex-direction: unset;
+    max-width: unset;
+    row-gap: unset;
+    column-gap: 24px;
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    background: url(/image/advantage-icon.svg) no-repeat center;
+
+    @include nmd {
+      width: 100%;
+      max-width: 56px;
+      height: 56px;
+      background-size: contain;
+    }
+  }
+
+  &__description {
+    max-width: 325px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+    color: #343b48;
+
+    @include nmd {
+      max-width: 503px;
+    }
+
+    @include nsm {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+//возможности
+.possibilities {
+  display: flex;
+  column-gap: 8px;
+
+  &__icon {
+    width: 100%;
+    max-width: 24px;
+    height: 24px;
+    background: url(/image/possibilities-icon.svg) no-repeat center;
+
+    @include nmd {
+      background: url(/image/possibilities-icon-mob.svg) no-repeat center;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    color: #101828;
+  }
+}
+
+//Стоимость услуг
+.cost-services {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  width: 100%;
+  max-width: 345px;
+  padding: 0 20px;
+
+  @include nmd {
+    max-width: unset;
+  }
+  @include nsm {
+    row-gap: 11px;
+  }
+
+  &:first-child {
+    padding-left: 40px;
+
+    @include nmd {
+      padding-left: 20px;
+    }
+  }
+
+  &__block-title {
+    display: flex;
+    column-gap: 12px;
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+    color: #343B48;
+
+    @include nmd {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  &__price {
+    padding-left: 36px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    /* identical to box height, or 127% */
+    color: #101828;
+
+    @include nsm {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  svg {
+    width: 100%;
+    max-width: 24px;
+  }
+
+  br {
+    @include nmd {
+      display: none;
+    }
+  }
+}
+
+//________________
+
+html {
+  font-family: "Rostelecom Basis";
+  font-style: normal;
+}
+
+body {
+  background: #eeeeee;
+}
+
+.page {
+  max-width: 1920px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+//________________Секции
+
+.header {
+  width: 100%;
+  height: 60px;
+  background: #101828;
+}
+
+//Телевидение, онлайн-кинотеатр, развлечения и облачные игры в одной приставке
+.list-benefits {
+  padding: 80px 0;
+
+  @include nmd {
+    padding: 64px 0;
+  }
+
+  @include nsm {
+    padding: 40px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    @include nsm {
+      row-gap: 32px;
+    }
+  }
+
+  .list-benefits-title {
+    max-width: 953px;
+    //Мне кажется font-weight 700 а не 500 как указанно в figma
+    // font-weight: 500;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    /* or 122% */
+    color: #101828;
+
+    @include nmd {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    @include nsm {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  .list-benefits-block {
+    display: flex;
+    column-gap: 20px;
+
+    @include nmd {
+      flex-direction: column;
+      column-gap: unset;
+      row-gap: 32px;
+    }
+    @include nsm {
+      row-gap: 28px;
+    }
+  }
+}
+
+//Возможности сервиса
+.service-capabilities {
+  padding: 80px 0;
+  background: #f8f8f8;
+
+  @include nmd {
+    padding: 60px 0;
+  }
+  @include nsm {
+    padding: 40px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    column-gap: 70px / 1440px * 100%;
+
+    @include nmd {
+      flex-direction: column;
+      row-gap: 40px;
+      column-gap: unset;
+    }
+    @include nsm {
+      row-gap: 32px;
+    }
+  }
+
+  .service-capabilities-image {
+    width: 660px / 1440px * 100%;
+
+    @include nmd {
+      width: 100%;
+    }
+
+    img {
+      border-radius: 8px;
+
+      @include nmd {
+        height: 485px;
+      }
+
+      @include nsm {
+        object-fit: contain;
+        height: auto;
+      }
+    }
+  }
+
+  .service-capabilities-description {
+    width: 710px / 1440px * 100%;
+    padding: 36px 0 16px 0;
+
+    @include nmd {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .service-capabilities-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height, or 122% */
+    color: #101828;
+
+    @include nmd {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    @include nsm {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  .service-capabilities-feature-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding: 20px 0 40px 0;
+
+    @include nsm {
+      padding: 20px 0 32px 0;
+    }
+  }
+
+  //Цена
+  .service-capabilities-action {
+    display: flex;
+    column-gap: 20px;
+  }
+  .price {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+
+    @include nsm {
+      column-gap: 7px;
+    }
+  }
+  .sum {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+    /* identical to box height, or 120% */
+    color: #101828;
+
+    @include nmd {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+  .date {
+    display: flex;
+    flex-direction: column;
+
+    &__valut {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+      color: rgba(16, 24, 40, 0.7);
+
+      padding-bottom: 3px;
+      border-bottom: 1px solid rgba(16, 24, 40, 0.7);
+
+      @include nmd {
+        line-height: 16px;
+      }
+    }
+    &__month {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+      color: rgba(16, 24, 40, 0.7);
+
+      @include nmd {
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+//Рекомендуем интернет-магазин
+.online-store {
+  padding-top: 80px;
+
+  @include nmd {
+    padding-top: 64px;
+  }
+  @include nsm {
+    padding: 40px 20px 40px 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    column-gap: 20px / 1440px * 100%;
+    background: #f3f3f4;
+    border-radius: 8px;
+
+    @include nmd {
+      flex-direction: column;
+      row-gap: 32px;
+      column-gap: unset;
+    }
+    @include nsm {
+      row-gap: 28px;
+    }
+  }
+
+  .online-store-image {
+    width: 588px / 1440px * 100%;
+
+    @include nmd {
+      width: 100%;
+    }
+
+    img {
+      @include nmd {
+        height: 390px;
+      }
+      @include nsm {
+        object-fit: contain;
+        height: 202px;
+      }
+    }
+  }
+
+  .online-store-description {
+    width: 710px / 1440px * 100%;
+    padding: 40px 20px 40px 40px;
+
+    @include nmd {
+      width: 100%;
+      padding: 0px 20px 40px 40px;
+    }
+    @include nsm {
+      padding: 0 0 32px 0;
+    }
+  }
+
+  .online-store-subtitle {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #868b95;
+
+    @include nmd {
+      line-height: 14px;
+    }
+    @include nsm {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .online-store-title {
+    padding-top: 16px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    /* identical to box height, or 129% */
+    color: #101828;
+
+    @include nmd {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    @include nsm {
+      padding-top: 12px;
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+  .online-store-text {
+    padding-top: 12px;
+    padding-bottom: 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+    color: #343b48;
+
+    @include nmd {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @include nsm {
+      padding-top: 8px;
+      padding-bottom: 20px;
+    }
+  }
+  .button_size {
+    @include nsm {
+      width: 100%;
+      max-width: 360px;
+    }
+  }
+}
+
+//Сколько стоит
+.what-price {
+  padding: 80px 0;
+
+  @include nmd {
+    padding: 64px 0;
+  }
+  @include nsm {
+    padding: 40px 0;
+  }
+
+  .what-price-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height, or 122% */
+    color: #101828;
+
+    @include nmd {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    @include nsm {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  .possibilities_distance {
+    padding: 32px 0 28px 0;
+
+    @include nsm {
+      padding: 28px 0 24px 0;
+    }
+
+    .possibilities__description {
+      font-size: 18px;
+      line-height: 28px;
+      @include nmd {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    .possibilities__icon {
+      background: url(/image/possibilities-icon.svg) no-repeat center;
+    }
+  }
+
+  .what-price-block {
+    display: flex;
+    align-items: flex-start;
+    padding: 52px 0 52px 0;
+
+    background: #f8f8f8;
+    border-radius: 8px;
+
+    @include nmd {
+      flex-direction: column;
+      padding: 40px 0;
+    }
+    @include nsm {
+      padding: 32px 0;
+    }
+  }
+
+  .what-price-line {
+    height: 112px;
+    padding: 0 10px;
+    border-right: 1px solid rgba(16, 24, 40, 0.1);
+
+    @include nmd {
+      width: 94.5%;
+      height: unset;
+      margin: 32px auto;
+      border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+      border-right: unset;
+    }
+    @include nsm {
+      width: 87.5%;
+      margin: 28px auto;
+    }
+  }
+
+  .possibilities_about-tariff {
+    padding-top: 28px;
+    cursor: pointer;
+
+    @include nmd {
+      padding-top: 20px;
+    }
+    @include nsm {
+      padding-top: 28px;
+    }
+
+    .possibilities__icon {
+      background: url(/image/possibilities-about-tariff-icon.svg) no-repeat center;
+    }
+    
+    .possibilities__description {
+        color: #FF4F12;
+
+        @include nsm {
+          font-size: 14px;
+          line-height: 20px;
+        }
+    }
+  }
+}

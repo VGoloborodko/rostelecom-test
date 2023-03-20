@@ -1,0 +1,42 @@
+/* Контейнер */
+
+/* One */
+.container-box {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  
+    // background: rgba(0, 255, 21, 0.2);
+  }
+  /* Two */
+  @media (max-width: 1440px) {
+    .container-box {
+      // width: 1023px;
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+  
+      // background: rgba(251, 255, 0, 0.2);
+    }
+  }
+  /* Three */
+  @media (max-width: 1240px) and (max-width: 1023px) {
+    .container-box {
+      width: 768px;
+      // width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+  
+      // background: rgb(0, 0, 255, 0.2);
+    }
+  }
+  /* Four */
+  @media (max-width: 1240px) and (max-width: 1023px) and (max-width: 767px) {
+    .container-box {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+  
+      // background: rgba(234, 0, 255, 0.2);
+    }
+  }
